@@ -2007,6 +2007,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('/api/tasks', this.task).then(function (res) {
+        console.log(_this.task);
+
         _this.$router.push({
           name: 'task.list'
         });
@@ -2155,6 +2157,15 @@ __webpack_require__.r(__webpack_exports__);
 
       axios["delete"]('/api/tasks/' + id).then(function (res) {
         _this2.getTasks();
+      });
+    },
+    submit: function submit() {
+      var _this3 = this;
+
+      axios.post('/api/tasks', this.task).then(function (res) {
+        _this3.$router.push({
+          name: 'task.list'
+        });
       });
     }
   },
@@ -38368,15 +38379,8 @@ var render = function() {
             _c("td", [
               _c(
                 "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function($event) {
-                      return _vm.deleteTask(task.id)
-                    }
-                  }
-                },
-                [_vm._v("Delete")]
+                { staticClass: "btn btn-danger", on: { click: _vm.submit } },
+                [_vm._v("Done")]
               )
             ])
           ])
@@ -53900,9 +53904,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_HeaderComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/HeaderComponent */ "./resources/js/components/HeaderComponent.vue");
 /* harmony import */ var _components_TaskListComponent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/TaskListComponent */ "./resources/js/components/TaskListComponent.vue");
-/* harmony import */ var _components_TaskCreateComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/TaskCreateComponent */ "./resources/js/components/TaskCreateComponent.vue");
+/* harmony import */ var _components_TaskCreateComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TaskCreateComponent */ "./resources/js/components/TaskCreateComponent.vue");
 /* harmony import */ var _components_TaskShowComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/TaskShowComponent */ "./resources/js/components/TaskShowComponent.vue");
-/* harmony import */ var _components_TaskEditComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/TaskEditComponent */ "./resources/js/components/TaskEditComponent.vue");
+/* harmony import */ var _components_TaskEditComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/TaskEditComponent */ "./resources/js/components/TaskEditComponent.vue");
 
 
 
@@ -53928,7 +53932,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   }, {
     path: '/tasks/create',
     name: 'task.create',
-    component: _components_TaskCreateComponent__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_TaskCreateComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/tasks/:taskId',
     name: 'task.show',
@@ -53937,7 +53941,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   }, {
     path: '/tasks/:taskId/edit',
     name: 'task.edit',
-    component: _components_TaskEditComponent__WEBPACK_IMPORTED_MODULE_6__["default"],
+    component: _components_TaskEditComponent__WEBPACK_IMPORTED_MODULE_5__["default"],
     props: true
   }]
 });

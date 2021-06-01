@@ -29,7 +29,7 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
+                    <button class="btn btn-danger" @click="submit">Done</button>
                 </td>
             </tr>
             </tbody>
@@ -55,6 +55,12 @@
                 axios.delete('/api/tasks/' + id)
                     .then((res) => {
                         this.getTasks();
+                    });
+            },
+            submit() {
+                axios.post('/api/tasks', this.task)
+                    .then((res) => {
+                        this.$router.push({name: 'task.list'});
                     });
             }
         },
