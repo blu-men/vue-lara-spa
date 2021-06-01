@@ -23,3 +23,5 @@ Route::post('/tasks', 'TaskController@store');
 Route::get('/tasks/{task}', 'TaskController@show');
 Route::put('/tasks/{task}', 'TaskController@update');
 Route::delete('/tasks/{task}', 'TaskController@destroy');
+
+Route::post('/todotasks', 'App\Http\Controllers\TodoTaskController@store');
