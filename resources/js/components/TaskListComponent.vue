@@ -35,13 +35,13 @@
                     <div id="overlay" v-show="showContent">
                         <div id="modal">
                             <p>これがモーダルウィンドウです。</p>
+                            <!-- ここいらが最新のデータになっている -->
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.content }}</td>
+                            <td>{{ task.person_in_charge }}</td>
                             <button v-on:click="closeModal">Close</button>
                         </div>
                     </div>
-
-                        <!-- <button class="btn btn-danger" @click="submit">Done</button> -->
-                        <!-- <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button> -->
-
                 </td>
             </tr>
             </tbody>

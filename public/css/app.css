@@ -587,6 +587,7 @@ pre code {
 
 #overlay{
   /*　要素を重ねた時の順番　*/
+
   z-index:1;
 
   /*　画面全体を覆う設定　*/
@@ -595,7 +596,7 @@ pre code {
   left:0;
   width:100%;
   height:100%;
-  background-color:rgba(0, 0, 0, 0.1);
+  background-color:rgba(0,0,0,0.1);
 
   /*　画面の中央に要素を表示させる設定　*/
   display: flex;
@@ -604,13 +605,13 @@ pre code {
 
 }
 
+
 #modal{
   z-index:2;
   width:50%;
   padding: 1em;
   background:#fff;
 }
-
 
 @media (min-width: 576px) {
   .container-sm,
@@ -10968,3 +10969,4 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
