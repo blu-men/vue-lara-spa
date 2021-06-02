@@ -2006,6 +2006,7 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
+      // this.task?
       axios.post('/api/tasks', this.task).then(function (res) {
         console.log(_this.task);
 
@@ -2138,6 +2139,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2155,17 +2160,19 @@ __webpack_require__.r(__webpack_exports__);
     deleteTask: function deleteTask(id) {
       var _this2 = this;
 
+      // idで紐付け、削除
       axios["delete"]('/api/tasks/' + id).then(function (res) {
         _this2.getTasks();
       });
     },
-    submit: function submit() {
+    submit: function submit(id) {
       var _this3 = this;
 
-      axios.post('/api/tasks', this.task).then(function (res) {
-        _this3.$router.push({
-          name: 'task.list'
-        });
+      // 処理ができねえ
+      axios.post('/api/tasks/' + id, {
+        params: tasks.id
+      }).then(function (res) {
+        _this3.getTasks();
       });
     }
   },
@@ -38379,7 +38386,14 @@ var render = function() {
             _c("td", [
               _c(
                 "button",
-                { staticClass: "btn btn-danger", on: { click: _vm.submit } },
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function($event) {
+                      return _vm.submit(task.id)
+                    }
+                  }
+                },
                 [_vm._v("Done")]
               )
             ])
