@@ -2151,6 +2151,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -38421,6 +38424,12 @@ var render = function() {
                 [
                   _c("div", { attrs: { id: "modal" } }, [
                     _c("p", [_vm._v("これがモーダルウィンドウです。")]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(task.title))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(task.content))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(task.person_in_charge))]),
                     _vm._v(" "),
                     _c("button", { on: { click: _vm.closeModal } }, [
                       _vm._v("Close")

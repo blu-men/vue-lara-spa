@@ -35,6 +35,9 @@
                     <div id="overlay" v-show="showContent">
                         <div id="modal">
                             <p>これがモーダルウィンドウです。</p>
+                            <td>{{ task.title }}</td>
+                            <td>{{ task.content }}</td>
+                            <td>{{ task.person_in_charge }}</td>
                             <button v-on:click="closeModal">Close</button>
                         </div>
                     </div>
