@@ -29,7 +29,11 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" @click="submit">Done</button>
+                    <button class="btn btn-danger" v-on:click="submit(task.id)">Done</button>
+
+                    <!-- <button class="btn btn-danger" @click="submit">Done</button> -->
+                    <!-- <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button> -->
+
                 </td>
             </tr>
             </tbody>
@@ -52,15 +56,17 @@
                     });
             },
             deleteTask(id) {
+                // idで紐付け、削除
                 axios.delete('/api/tasks/' + id)
                     .then((res) => {
                         this.getTasks();
                     });
             },
-            submit() {
-                axios.post('/api/tasks', this.task)
+            submit(id) {
+                // 処理ができねえ
+                axios.post('/api/tasks/' + id, {params: tasks.id })
                     .then((res) => {
-                        this.$router.push({name: 'task.list'});
+                        this.getTasks();
                     });
             }
         },
