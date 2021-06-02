@@ -2143,10 +2143,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tasks: []
+      tasks: [],
+      showContent: false
     };
   },
   methods: {
@@ -2174,6 +2183,12 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         _this3.getTasks();
       });
+    },
+    openModal: function openModal() {
+      this.showContent = true;
+    },
+    closeModal: function closeModal() {
+      this.showContent = false;
     }
   },
   mounted: function mounted() {
@@ -38386,15 +38401,32 @@ var render = function() {
             _c("td", [
               _c(
                 "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function($event) {
-                      return _vm.submit(task.id)
-                    }
-                  }
-                },
+                { staticClass: "btn btn-danger", on: { click: _vm.openModal } },
                 [_vm._v("Done")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.showContent,
+                      expression: "showContent"
+                    }
+                  ],
+                  attrs: { id: "overlay" }
+                },
+                [
+                  _c("div", { attrs: { id: "modal" } }, [
+                    _c("p", [_vm._v("これがモーダルウィンドウです。")]),
+                    _vm._v(" "),
+                    _c("button", { on: { click: _vm.closeModal } }, [
+                      _vm._v("Close")
+                    ])
+                  ])
+                ]
               )
             ])
           ])

@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+       
         <table class="table table-hover">
             <thead class="thead-light">
             <tr>
@@ -14,7 +15,7 @@
             </thead>
             <tbody>
             <tr v-for="task in tasks" v-bind:key="task.name">
-                <th scope="row">{{ task.id }}</th>
+            <th scope="row">{{ task.id }}</th>
                 <td>{{ task.title }}</td>
                 <td>{{ task.content }}</td>
                 <td>{{ task.person_in_charge }}</td>
@@ -29,15 +30,22 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="submit(task.id)">Done</button>
+                    <button class="btn btn-danger" v-on:click="openModal">Done</button>
 
-                    <!-- <button class="btn btn-danger" @click="submit">Done</button> -->
-                    <!-- <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button> -->
+                    <div id="overlay" v-show="showContent">
+                        <div id="modal">
+                            <p>これがモーダルウィンドウです。</p>
+                            <button v-on:click="closeModal">Close</button>
+                        </div>
+                    </div>
+
+                        <!-- <button class="btn btn-danger" @click="submit">Done</button> -->
+                        <!-- <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button> -->
 
                 </td>
             </tr>
             </tbody>
-        </table>
+            </table>
     </div>
 </template>
 
@@ -45,7 +53,8 @@
     export default {
         data: function () {
             return {
-                tasks: []
+                tasks: [],
+                showContent: false
             }
         },
         methods: {
@@ -68,7 +77,14 @@
                     .then((res) => {
                         this.getTasks();
                     });
-            }
+            },
+
+            openModal: function(){
+                this.showContent = true
+                },
+                closeModal: function(){
+                this.showContent = false
+                }
         },
         mounted() {
             this.getTasks();
