@@ -2170,17 +2170,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38051,11 +38040,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "overlay" } }, [
     _c("div", { attrs: { id: "modal" } }, [
-      _c("p", [_vm._v(_vm._s(_vm.val.title))]),
+      _c("td", [_vm._v(_vm._s(_vm.val.title))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.val.content))]),
+      _c("td", [_vm._v(_vm._s(_vm.val.content))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.val.person_in_charge))]),
+      _c("td", [_vm._v(_vm._s(_vm.val.person_in_charge))]),
       _vm._v(" "),
       _c(
         "button",
@@ -38066,7 +38055,7 @@ var render = function() {
             }
           }
         },
-        [_vm._v("閉じる")]
+        [_vm._v("close")]
       )
     ])
   ])
@@ -38532,7 +38521,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Edit")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Delete")])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Done")])
       ])
     ])
   }

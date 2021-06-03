@@ -10,7 +10,7 @@
                 <th scope="col">Person In Charge</th>
                 <th scope="col">Show</th>
                 <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Done</th>
             </tr>
             </thead>
             <tbody>
@@ -31,17 +31,6 @@
                 </td>
                 <td>
                     <button class="btn btn-danger" v-on:click="openModal(task)">Done</button>
-
-                    <!-- <div id="overlay" v-show="showContent">
-                        <div id="modal">
-                            <p>これがモーダルウィンドウです。</p>
-                             ここいらが最新のデータになっている 
-                            <td>{{ task.title }}</td>
-                            <td>{{ task.content }}</td>
-                            <td>{{ task.person_in_charge }}</td>
-                            <button v-on:click="closeModal">Close</button>
-                        </div>
-                    </div> -->
                 </td>
                 <modal :val="postTask" v-show="showContent" @close="closeModal" />
             </tr>
