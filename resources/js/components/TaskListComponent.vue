@@ -30,19 +30,20 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="openModal">Done</button>
+                    <button class="btn btn-danger" v-on:click="openModal(task)">Done</button>
 
-                    <div id="overlay" v-show="showContent">
+                    <!-- <div id="overlay" v-show="showContent">
                         <div id="modal">
                             <p>これがモーダルウィンドウです。</p>
-                            <!-- ここいらが最新のデータになっている -->
+                             ここいらが最新のデータになっている 
                             <td>{{ task.title }}</td>
                             <td>{{ task.content }}</td>
                             <td>{{ task.person_in_charge }}</td>
                             <button v-on:click="closeModal">Close</button>
                         </div>
-                    </div>
+                    </div> -->
                 </td>
+                <modal :val="postTask" v-show="showContent" @close="closeModal" />
             </tr>
             </tbody>
             </table>
@@ -50,11 +51,18 @@
 </template>
 
 <script>
+
+    import Modal from '../components/Modal.vue'
+
     export default {
+        components: {
+            Modal
+        },
         data: function () {
             return {
                 tasks: [],
-                showContent: false
+                showContent: false,
+                postTask: ""
             }
         },
         methods: {
@@ -64,23 +72,24 @@
                         this.tasks = res.data;
                     });
             },
-            deleteTask(id) {
-                // idで紐付け、削除
-                axios.delete('/api/tasks/' + id)
-                    .then((res) => {
-                        this.getTasks();
-                    });
-            },
-            submit(id) {
-                // 処理ができねえ
-                axios.post('/api/tasks/' + id, {params: tasks.id })
-                    .then((res) => {
-                        this.getTasks();
-                    });
-            },
+            // deleteTask(id) {
+            //     // idで紐付け、削除
+            //     axios.delete('/api/tasks/' + id)
+            //         .then((res) => {
+            //             this.getTasks();
+            //         });
+            // },
+            // submit(id) {
+            //     // 処理ができねえ
+            //     axios.post('/api/tasks/' + id, {params: tasks.id })
+            //         .then((res) => {
+            //             this.getTasks();
+            //         });
+            // },
 
-            openModal: function(){
+            openModal: function(task){
                 this.showContent = true
+                this.postTask = task
                 },
                 closeModal: function(){
                 this.showContent = false
