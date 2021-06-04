@@ -1987,24 +1987,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Modal',
-  props: ['val'],
-  data: function data() {
-    return {
-      val: {}
-    };
-  },
+  props: ['task'],
+  // data: function () {
+  //   return {
+  //     task: {}
+  //   }
+  // },
   methods: {
     submit: function submit() {
-      var _this = this;
-
       // 引数調整不可避、そしてなぜ"PUT"なのか
-      axios.post('/api/tasks/' + this.taskId, this.task).then(function (res) {
-        _this.$router.push({
-          name: 'task.list'
-        });
-      });
+      axios.post('/api/tasks/' + this.taskId, this.task); //   .then((res) => {
+      //   this.$router.push({name: 'task.list'})
+      // });
     }
   }
 });
@@ -2210,7 +2207,13 @@ __webpack_require__.r(__webpack_exports__);
         _this.tasks = res.data;
       });
     },
-    // deleteTask(id) {
+    openModal: function openModal(task) {
+      this.showContent = true;
+      this.postTask = task;
+    },
+    closeModal: function closeModal() {
+      this.showContent = false;
+    } // deleteTask(id) {
     //     // idで紐付け、削除
     //     axios.delete('/api/tasks/' + id)
     //         .then((res) => {
@@ -2224,13 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
     //             this.getTasks();
     //         });
     // },
-    openModal: function openModal(task) {
-      this.showContent = true;
-      this.postTask = task;
-    },
-    closeModal: function closeModal() {
-      this.showContent = false;
-    }
+
   },
   mounted: function mounted() {
     this.getTasks();
@@ -38060,18 +38057,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "overlay" } }, [
     _c("div", { attrs: { id: "modal" } }, [
-      _c("td", [_vm._v(_vm._s(_vm.val.title))]),
+      _c("td", [_vm._v(_vm._s(_vm.task.id))]),
       _vm._v(" "),
-      _c("td", [_vm._v(_vm._s(_vm.val.content))]),
+      _c("td", [_vm._v(_vm._s(_vm.task.title))]),
       _vm._v(" "),
-      _c("td", [_vm._v(_vm._s(_vm.val.person_in_charge))]),
+      _c("td", [_vm._v(_vm._s(_vm.task.content))]),
+      _vm._v(" "),
+      _c("td", [_vm._v(_vm._s(_vm.task.person_in_charge))]),
       _vm._v(" "),
       _c(
         "button",
         {
           on: {
             click: function($event) {
-              return _vm.submit("close")
+              return _vm.submit()
             }
           }
         },
@@ -38522,7 +38521,7 @@ var render = function() {
                     expression: "showContent"
                   }
                 ],
-                attrs: { val: _vm.postTask },
+                attrs: { task: _vm.postTask },
                 on: { close: _vm.closeModal }
               })
             ],
