@@ -1984,9 +1984,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Modal',
-  props: ['val']
+  props: ['val'],
+  data: function data() {
+    return {
+      val: {}
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      // 引数調整不可避、そしてなぜ"PUT"なのか
+      axios.post('/api/tasks/' + this.taskId, this.task).then(function (res) {
+        _this.$router.push({
+          name: 'task.list'
+        });
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -38045,6 +38065,18 @@ var render = function() {
       _c("td", [_vm._v(_vm._s(_vm.val.content))]),
       _vm._v(" "),
       _c("td", [_vm._v(_vm._s(_vm.val.person_in_charge))]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          on: {
+            click: function($event) {
+              return _vm.submit("close")
+            }
+          }
+        },
+        [_vm._v("submit")]
+      ),
       _vm._v(" "),
       _c(
         "button",
