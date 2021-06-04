@@ -32,7 +32,7 @@
                 <td>
                     <button class="btn btn-danger" v-on:click="openModal(task)">Done</button>
                 </td>
-                <modal :val="postTask" v-show="showContent" @close="closeModal" />
+                <modal :task="postTask" v-show="showContent" @close="closeModal" />
             </tr>
             </tbody>
             </table>
@@ -61,6 +61,14 @@
                         this.tasks = res.data;
                     });
             },
+            
+            openModal: function(task){
+                this.showContent = true
+                this.postTask = task
+                },
+            closeModal: function(){
+                this.showContent = false
+            }
             // deleteTask(id) {
             //     // idで紐付け、削除
             //     axios.delete('/api/tasks/' + id)
@@ -75,14 +83,6 @@
             //             this.getTasks();
             //         });
             // },
-
-            openModal: function(task){
-                this.showContent = true
-                this.postTask = task
-                },
-                closeModal: function(){
-                this.showContent = false
-                }
         },
         mounted() {
             this.getTasks();
