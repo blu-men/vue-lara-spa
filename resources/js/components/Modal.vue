@@ -6,6 +6,9 @@
       <td>{{ task.title }}</td>
       <td>{{ task.content }}</td>
       <td>{{ task.person_in_charge }}</td>
+      <button type="submit" class="btn btn-primary">●</button>
+      <button type="submit" class="btn btn-primary">▲</button>
+      <button type="submit" class="btn btn-primary">✖︎</button>
 
       <button @click="submit()">submit</button>
 
