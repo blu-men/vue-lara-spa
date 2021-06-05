@@ -20,4 +20,5 @@ Route::get('/tasks/{task}', 'TaskController@show');
 Route::put('/tasks/{task}', 'TaskController@update');
 Route::delete('/tasks/{task}', 'TaskController@destroy');
 
+Route::get('/todotasks', 'TodoTaskController@index');
 Route::post('/todotasks/{task}', 'TodoTaskController@store');

@@ -4,6 +4,7 @@ import TaskListComponent from "./components/TaskListComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
 import TaskEditComponent from "./components/TaskEditComponent";
+import DoneTaskListComponent from "./components/DoneTaskListComponent";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40,6 +41,11 @@ const router = new VueRouter({
             name: 'task.edit',
             component: TaskEditComponent,
             props: true
+        },
+        {
+            path: '/todotasks',
+            name: 'donetask.list',
+            component: DoneTaskListComponent,
         },
     ]
 });
