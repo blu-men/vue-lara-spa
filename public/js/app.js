@@ -1998,10 +1998,14 @@ __webpack_require__.r(__webpack_exports__);
   // },
   methods: {
     submit: function submit() {
+      var _this = this;
+
       // 引数調整不可避、そしてなぜ"PUT"なのか
-      axios.post('/api/tasks/' + this.taskId, this.task); //   .then((res) => {
-      //   this.$router.push({name: 'task.list'})
-      // });
+      axios.post('/api/todotasks/' + this.taskId, this.task).then(function (res) {
+        _this.$router.push({
+          name: 'task.list'
+        });
+      });
     }
   }
 });
