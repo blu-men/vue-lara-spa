@@ -26,10 +26,10 @@
     methods: {
       submit() {
         // 引数調整不可避、そしてなぜ"PUT"なのか
-        axios.post('/api/tasks/' + this.taskId, this.task)
-        //   .then((res) => {
-        //   this.$router.push({name: 'task.list'})
-        // });
+        axios.post('/api/todotasks/' + this.taskId, this.task)
+          .then((res) => {
+          this.$router.push({name: 'task.list'})
+        });
       }
     }
   }
