@@ -2,23 +2,29 @@
 <template>
   <div id="overlay">
     <div id="modal">
-      <td>{{ task.id }}</td>
-      <td>{{ task.title }}</td>
-      <td>{{ task.content }}</td>
-        評価：
-      <td>
-        <select name="evaluation" v-model="task.evaluation">
-        <option value="●">●</option>
-        <option value="✖︎">✖︎</option>
-        <option value="▲">▲</option>
-        </select>
 
-        <textarea name="kanso" rows="4" cols="5" v-model="task.comment"></textarea>
+      <div id="modal-text">
+        <!-- <td>{{ task.id }}</td> -->
+        <td>{{ task.title }}</td>
+        <td>{{ task.content }}</td>
+        <td>
+          Result：
+          <select name="evaluation" v-model="task.evaluation">
+          <option value="●">●</option>
+          <option value="✖︎">✖︎</option>
+          <option value="▲">▲</option>
+          </select>
+        </td>
+        <td><textarea name="kanso" rows="1" cols="35" v-model="task.comment"></textarea></td>
 
-        <button @click="submit()" class="btn btn-primary">submit</button>
+      </div>
 
-        <button @click="$emit('close')">close</button>
-      </td>
+      <div id="modal-buttons">
+        <td><button @click="submit()" class="btn btn-primary">Submit</button></td>
+
+        <td><button @click="$emit('close')" class="btn btn-danger">Close</button></td>
+      </div>
+
     </div>
   </div>
 </template>
