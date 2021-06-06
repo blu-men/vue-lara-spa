@@ -2296,7 +2296,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -38089,8 +38088,6 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(task.content))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(task.person_in_charge))]),
-              _vm._v(" "),
               _c(
                 "td",
                 [
@@ -38173,14 +38170,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-light" }, [
+      _c("p", [_vm._v("DoneTaskList")]),
+      _vm._v(" "),
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Person In Charge")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")]),
         _vm._v(" "),
@@ -38263,7 +38260,7 @@ var render = function() {
     _c("div", { staticClass: "container" }, [
       _c("nav", { staticClass: "navbar navbar-dark" }, [
         _c("span", { staticClass: "navbar-brand mb-0 h1" }, [
-          _vm._v("Vue Laravel SPA")
+          _vm._v("Vue_Lara_Spa")
         ]),
         _vm._v(" "),
         _c(
@@ -38729,8 +38726,6 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(task.content))]),
               _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(task.person_in_charge))]),
-              _vm._v(" "),
               _c(
                 "td",
                 [
@@ -38813,14 +38808,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-light" }, [
+      _c("p", [_vm._v("TaskList")]),
+      _vm._v(" "),
       _c("tr", [
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("#")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("No.")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Title")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Content")]),
-        _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("Person In Charge")]),
         _vm._v(" "),
         _c("th", { attrs: { scope: "col" } }, [_vm._v("Show")]),
         _vm._v(" "),
