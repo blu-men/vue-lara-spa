@@ -5,14 +5,20 @@
       <td>{{ task.id }}</td>
       <td>{{ task.title }}</td>
       <td>{{ task.content }}</td>
-      <td>{{ task.person_in_charge }}</td>
-      <button type="submit" class="btn btn-primary">●</button>
-      <button type="submit" class="btn btn-primary">▲</button>
-      <button type="submit" class="btn btn-primary">✖︎</button>
+        評価：
+      <td>
+        <select name="evaluation" v-model="task.evaluation">
+        <option value="●">●</option>
+        <option value="✖︎">✖︎</option>
+        <option value="▲">▲</option>
+        </select>
 
-      <button @click="submit()">submit</button>
+        <textarea name="kanso" rows="4" cols="5" v-model="task.comment"></textarea>
 
-      <button @click="$emit('close')">close</button>
+        <button @click="submit()" class="btn btn-primary">submit</button>
+
+        <button @click="$emit('close')">close</button>
+      </td>
     </div>
   </div>
 </template>
@@ -21,11 +27,11 @@
   export default {
     name: 'Modal',
     props: ['task'],
-    // data: function () {
-    //   return {
-    //     task: {}
-    //   }
-    // },
+    data: function () {
+      return {
+        task: {}
+      }
+    },
     methods: {
       submit() {
         // 引数調整不可避、そしてなぜ"PUT"なのか

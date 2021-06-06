@@ -10,5 +10,7 @@ class TodoTask extends Model
         'title',
         'content',
         'person_in_charge',
+        'evaluation',
+        'comment'
     ];
 }
