@@ -2,14 +2,29 @@
 <template>
   <div id="overlay">
     <div id="modal">
-      <td>{{ task.id }}</td>
-      <td>{{ task.title }}</td>
-      <td>{{ task.content }}</td>
-      <td>{{ task.person_in_charge }}</td>
 
-      <button @click="submit()">submit</button>
+      <div id="modal-text">
+        <!-- <td>{{ task.id }}</td> -->
+        <td>{{ task.title }}</td>
+        <td>{{ task.content }}</td>
+        <td>
+          Result：
+          <select name="evaluation" v-model="task.evaluation">
+          <option value="●">●</option>
+          <option value="✖︎">✖︎</option>
+          <option value="▲">▲</option>
+          </select>
+        </td>
+        <td><textarea name="kanso" rows="1" cols="35" v-model="task.comment"></textarea></td>
 
-      <button @click="$emit('close')">close</button>
+      </div>
+
+      <div id="modal-buttons">
+        <td><button @click="submit()" class="btn btn-primary">Submit</button></td>
+
+        <td><button @click="$emit('close')" class="btn btn-danger">Close</button></td>
+      </div>
+
     </div>
   </div>
 </template>
@@ -18,18 +33,18 @@
   export default {
     name: 'Modal',
     props: ['task'],
-    // data: function () {
-    //   return {
-    //     task: {}
-    //   }
-    // },
+    data: function () {
+      return {
+        task: {}
+      }
+    },
     methods: {
       submit() {
         // 引数調整不可避、そしてなぜ"PUT"なのか
-        axios.post('/api/tasks/' + this.taskId, this.task)
-        //   .then((res) => {
-        //   this.$router.push({name: 'task.list'})
-        // });
+        axios.post('/api/todotasks/' + this.taskId, this.task)
+          .then((res) => {
+          this.$router.push({name: 'task.list'})
+        });
       }
     }
   }
