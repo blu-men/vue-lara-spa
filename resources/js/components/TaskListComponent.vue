@@ -8,7 +8,7 @@
                 <th scope="col">No.</th>
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
-                <th scope="col">Show</th>
+                <!-- <th scope="col">Show</th> -->
                 <th scope="col">Edit</th>
                 <th scope="col">Done</th>
             </tr>
@@ -18,18 +18,18 @@
             <th scope="row">{{ task.id }}</th>
                 <td>{{ task.title }}</td>
                 <td>{{ task.content }}</td>
-                <td>
+                <!-- <td>
                     <router-link v-bind:to="{name: 'task.show', params: {taskId: task.id }}">
                         <button class="btn btn-primary">Show</button>
                     </router-link>
-                </td>
+                </td> -->
                 <td>
                     <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
-                        <button class="btn btn-success">Edit</button>
+                        <button class="btn btn-primary">Edit</button>
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="openModal(task)">Done</button>
+                    <button class="btn btn-success" v-on:click="openModal(task)">Done</button>
                 </td>
                 <modal :task="postTask" v-show="showContent" @close="closeModal" />
             </tr>

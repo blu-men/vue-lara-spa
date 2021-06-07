@@ -8,9 +8,9 @@
                 <th scope="col">No.</th>
                 <th scope="col">Title</th>
                 <th scope="col">Content</th>
-                <th scope="col">Show</th>
+                <!-- <th scope="col">Show</th> -->
                 <th scope="col">Edit</th>
-                <th scope="col">Done</th>
+                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -19,18 +19,18 @@
                 <td>{{ task.title }}</td>
                 <td>{{ task.content }}</td>
                 <!-- <td>{{ task.person_in_charge }}</td> -->
-                <td>
+                <!-- <td>
                     <router-link v-bind:to="{name: 'task.show', params: {taskId: task.id }}">
                         <button class="btn btn-primary">Show</button>
                     </router-link>
-                </td>
+                </td> -->
                 <td>
                     <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
-                        <button class="btn btn-success">Edit</button>
+                        <button class="btn btn-primary">Edit</button>
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="openModal(task)">Done</button>
+                    <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
                 </td>
                 <modal :task="postTask" v-show="showContent" @close="closeModal" />
             </tr>
@@ -61,7 +61,12 @@
                         this.todotasks = res.data;
                     });
             },
-            
+            deleteTask(id) {
+                axios.delete('/api/tasks/' + id)
+                    .then((res) => {
+                        this.getTasks();
+                    });
+            },
             openModal: function(task){
                 this.showContent = true
                 this.postTask = task
