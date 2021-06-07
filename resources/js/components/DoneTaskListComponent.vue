@@ -2,10 +2,10 @@
     <div class="container">
         <table class="table table-hover">
             <thead class="thead-light">
-            <p>DoneTaskList</p>
+            <p>This is DoneTaskList Page.</p>
             <tr>
                 <th scope="col">No.</th>
-                <th scope="col">Title</th>
+                <th scope="col">Project</th>
                 <th scope="col">Content</th>
                 <th scope="col">Evaluation</th>
                 <th scope="col">Comment</th>

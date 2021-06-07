@@ -15,7 +15,7 @@
           <option value="▲">▲</option>
           </select>
         </td>
-        <td><textarea name="kanso" rows="1" cols="35" v-model="task.comment"></textarea></td>
+        <td><textarea name="kanso" rows="1" cols="20" v-model="task.comment"></textarea></td>
 
       </div>
 
