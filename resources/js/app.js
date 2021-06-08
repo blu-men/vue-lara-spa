@@ -12,7 +12,6 @@ import DoneTaskListComponent from "./components/DoneTaskListComponent";
  */
 
 require('./bootstrap');
-require('./public/css/app.css');
 
 window.Vue = require('vue');
 
