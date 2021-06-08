@@ -9,7 +9,6 @@
                 <th scope="col">Content</th>
                 <th scope="col">Evaluation</th>
                 <th scope="col">Comment</th>
-                <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
             </thead>
@@ -20,11 +19,6 @@
                 <td>{{ task.content }}</td>
                 <td>{{ task.evaluation }}</td>
                 <td>{{ task.comment }}</td>
-                <td>
-                    <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
-                        <button class="btn btn-primary">Edit</button>
-                    </router-link>
-                </td>
                 <td>
                     <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
                 </td>
