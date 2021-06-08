@@ -19,7 +19,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     mode: 'history',
-    base: '/tasks/',
+    base: '/public/',
     routes: [
         {
             path: '/tasks',
