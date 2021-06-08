@@ -18,7 +18,7 @@ window.Vue = require('vue');
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-    // mode: 'history',
+    mode: 'history',
     base: '/public/',
     routes: [
         {
