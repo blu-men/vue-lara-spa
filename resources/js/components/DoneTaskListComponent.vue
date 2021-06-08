@@ -70,20 +70,6 @@
             closeModal: function(){
                 this.showContent = false
             }
-            // deleteTask(id) {
-            //     // idで紐付け、削除
-            //     axios.delete('/api/tasks/' + id)
-            //         .then((res) => {
-            //             this.getTasks();
-            //         });
-            // },
-            // submit(id) {
-            //     // 処理ができねえ
-            //     axios.post('/api/tasks/' + id, {params: tasks.id })
-            //         .then((res) => {
-            //             this.getTasks();
-            //         });
-            // },
         },
         mounted() {
             this.getTasks();
