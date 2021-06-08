@@ -10,11 +10,7 @@
     <title>{{ config('app.name', 'vue-lara-spa') }}</title>
 
     <!-- Styles -->
-    @if(app('env') == 'production')
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    @else
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @endif
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
