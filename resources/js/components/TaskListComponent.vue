@@ -64,7 +64,6 @@
                         this.getTasks();
                     });
             },
-            
             openModal: function(task){
                 this.showContent = true
                 this.postTask = task

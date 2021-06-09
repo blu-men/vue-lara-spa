@@ -17,6 +17,13 @@ class TodoTaskController extends Controller
         return TodoTask::create($request->all());
     }
 
+    public function update(Request $request, TodoTask $task)
+    {
+        $task->update($request->all());
+
+        return $task;
+    }
+
     public function destroy(TodoTask $task)
     {
         $task->delete();
