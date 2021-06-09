@@ -22,7 +22,6 @@
                 <td>
                     <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
                 </td>
-                <modal :task="postTask" v-show="showContent" @close="closeModal" />
             </tr>
             </tbody>
             </table>
@@ -52,18 +51,11 @@
                     });
             },
             deleteTask(id) {
-                axios.delete('/api/tasks/' + id)
+                axios.delete('/api/todotasks/' + id)
                     .then((res) => {
                         this.getTasks();
                     });
             },
-            openModal: function(task){
-                this.showContent = true
-                this.postTask = task
-                },
-            closeModal: function(){
-                this.showContent = false
-            }
         },
         mounted() {
             this.getTasks();
