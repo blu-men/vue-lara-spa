@@ -7,7 +7,7 @@
                 <th scope="col">No.</th>
                 <th scope="col">Project</th>
                 <th scope="col">Content</th>
-                <th scope="col">Evaluation</th>
+                <th scope="col">Result</th>
                 <th scope="col">Comment</th>
                 <th scope="col">Delete</th>
             </tr>
