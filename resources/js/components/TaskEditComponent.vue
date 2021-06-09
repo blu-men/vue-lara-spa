@@ -15,10 +15,6 @@
                         <label for="content" class="col-sm-3 col-form-label">Content</label>
                         <input type="text" class="col-sm-9 form-control" id="content" v-model="task.content">
                     </div>
-                    <div class="form-group row">
-                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="col-sm-9 form-control" id="person-in-charge" v-model="task.person_in_charge">
-                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
