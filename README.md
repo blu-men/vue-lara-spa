@@ -29,3 +29,7 @@
   - タスク一覧ページより、達成/未達成のタスクを追加する機能(Ajax)
   - タスク編集機能(Ajax)
   - タスク削除機能(Ajax)
+
+# 公開先URL
+
+https://vue-lara-spa.herokuapp.com/
