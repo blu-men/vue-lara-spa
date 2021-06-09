@@ -27,7 +27,6 @@
         },
         methods: {
             submit() {
-                // this.task?
                 axios.post('/api/tasks', this.task)
                     .then((res) => {
                         console.log(this.task);
