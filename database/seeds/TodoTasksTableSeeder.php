@@ -16,7 +16,8 @@ class TodoTasksTableSeeder extends Seeder
             TodoTask::create([
                     'title' => 'title' . $i,
                     'content' => 'content' . $i,
-                    'person_in_charge' => 'person_in_charge' . $i,
+                    'evaluation' => 'evaluation' . $i,
+                    'comment' => 'comment' . $i,
                 ]
             );
         }

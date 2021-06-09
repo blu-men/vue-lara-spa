@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -7,18 +7,18 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Vue Laravel SPA') }}</title>
+    <title>{{ config('app.name', 'vue-lara-spa') }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <header-component></header-component>
+    <div id="app">
+        <header-component></header-component>
 
-    <router-view></router-view>
-</div>
-<!-- Scripts -->
-<script src="{{ mix('/js/app.js') }}" defer></script>
-</body>
+        <router-view></router-view>
+    </div>
+    <!-- Scripts -->
+    <script src="{{ mix('/js/app.js') }}" defer></script>
+    </body>
 </html>

@@ -8,7 +8,7 @@
                         <input type="text" class="col-sm-9 form-control-plaintext" readonly id="id" v-model="task.id">
                     </div>
                     <div class="form-group row">
-                        <label for="title" class="col-sm-3 col-form-label">Title</label>
+                        <label for="title" class="col-sm-3 col-form-label">Project</label>
                         <input type="text" class="col-sm-9 form-control" id="title" v-model="task.title">
                     </div>
                     <div class="form-group row">

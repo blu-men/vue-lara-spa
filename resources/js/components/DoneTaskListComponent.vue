@@ -2,14 +2,13 @@
     <div class="container">
         <table class="table table-hover">
             <thead class="thead-light">
-            <p>DoneTaskList</p>
+            <p>This is DoneTaskList Page.</p>
             <tr>
                 <th scope="col">No.</th>
-                <th scope="col">Title</th>
+                <th scope="col">Project</th>
                 <th scope="col">Content</th>
                 <th scope="col">Evaluation</th>
                 <th scope="col">Comment</th>
-                <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
             </thead>
@@ -20,11 +19,6 @@
                 <td>{{ task.content }}</td>
                 <td>{{ task.evaluation }}</td>
                 <td>{{ task.comment }}</td>
-                <td>
-                    <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
-                        <button class="btn btn-primary">Edit</button>
-                    </router-link>
-                </td>
                 <td>
                     <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
                 </td>
@@ -70,20 +64,6 @@
             closeModal: function(){
                 this.showContent = false
             }
-            // deleteTask(id) {
-            //     // idで紐付け、削除
-            //     axios.delete('/api/tasks/' + id)
-            //         .then((res) => {
-            //             this.getTasks();
-            //         });
-            // },
-            // submit(id) {
-            //     // 処理ができねえ
-            //     axios.post('/api/tasks/' + id, {params: tasks.id })
-            //         .then((res) => {
-            //             this.getTasks();
-            //         });
-            // },
         },
         mounted() {
             this.getTasks();
