@@ -18,7 +18,7 @@
 - PHP 7.2.34
 - Laravel Framework 7.30.4
 - Vue.js 2.6.12
-- laravl/ui
+- laravel/ui
 - axios
 - PostgreSQL 12.4
 
