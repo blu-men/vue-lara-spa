@@ -20,7 +20,7 @@
                 <td>{{ task.evaluation }}</td>
                 <td>{{ task.comment }}</td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
+                    <button class="btn btn-danger" @click="deleteTask(task.id)">Delete</button>
                 </td>
             </tr>
             </tbody>

@@ -18,7 +18,7 @@
                 <td>{{ task.title }}</td>
                 <td>{{ task.content }}</td>
                 <td>
-                    <button class="btn btn-danger" v-on:click="deleteTask(task.id)">Delete</button>
+                    <button class="btn btn-danger" @click="deleteTask(task.id)">Delete</button>
                 </td>
                 <td>
                     <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
@@ -26,7 +26,7 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-success" v-on:click="openModal(task)">Done</button>
+                    <button class="btn btn-success" @click="openModal(task)">Done</button>
                 </td>
                 <modal :task="postTask" v-show="showContent" @close="closeModal" />
             </tr>

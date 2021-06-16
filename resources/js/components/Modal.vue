@@ -38,7 +38,7 @@
           .then((res) => {
           this.$router.push({name: 'task.list'})
         });
-      }
+      },
     }
   }
 </script>
