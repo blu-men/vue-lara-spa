@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-       
         <table class="table table-hover">
             <thead class="thead-light">
             <p>This is TaskList Page.</p>
